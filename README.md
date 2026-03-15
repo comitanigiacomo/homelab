@@ -2,6 +2,8 @@
 
 Docker Compose configurations for my self-hosted server environment. Everything runs in containers to keep the host system clean.
 
+![dashboard](assets/dashboard.png)
+
 ## Services
 
 * **Glance**: Dashboard for a quick overview of all running services.
