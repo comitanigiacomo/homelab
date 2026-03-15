@@ -11,6 +11,7 @@ Docker Compose configurations for my self-hosted server environment. The infrast
 * **Kanso Project**: Self-hosted habit tracker. -> [kanso](https://kanso.jack-lab.dev/)
 * **Nextcloud**: Cloud storage for files and server backups.
 * **Nginx Proxy Manager**: Reverse proxy management.
+* **Pi-hole**: Network-wide ad blocking and local DNS management.
 * **Portainer**: Docker container monitoring.
 * **Portfolio**: Hosting for my personal website. -> [deep_mind](https://portfolio.jack-lab.dev/)
 * **Vaultwarden**: Password manager backend, synced across all devices via Bitwarden.
