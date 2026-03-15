@@ -1,0 +1,149 @@
+server:
+  port: 8080
+
+pages:
+  - name: "Jack Server"
+    columns:
+      - size: small
+        widgets:
+          - type: calendar
+            title: "Calendar"
+          - type: rss
+            title: "Linux News"
+            limit: 5
+            feeds:
+              - url: "https://www.omgubuntu.co.uk/feed"
+                title: "OMG! Ubuntu"
+
+      - size: full
+        widgets:
+          - type: search
+            autofocus: false
+            search-engine: google
+          
+          - type: monitor
+            title: "My Services"
+            sites:
+              - title: "Immich Foto"
+                url: "https://photos.jack-lab.dev"
+                icon: "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/immich.png"
+                allow-insecure: true
+              - title: "Proxy Manager"
+                url: "https://proxy.jack-lab.dev"
+                icon: "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/nginx-proxy-manager.png"
+                allow-insecure: true
+              - title: "Dashboard"
+                url: "https://glance.jack-lab.dev"
+                icon: "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/linux.png"
+                allow-insecure: true
+              - title: "Nextcloud"
+                url: "https://cloud.jack-lab.dev"
+                icon: "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/nextcloud.png"
+                allow-insecure: true
+              - title: "Pi-hole"
+                url: "https://pihole.jack-lab.dev/admin"
+                icon: "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/pi-hole.png"
+                allow-insecure: true
+              - title: "Portainer"
+                url: "https://portainer.jack-lab.dev"
+                icon: "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/portainer.png"
+                allow-insecure: true
+              - title: "Vaultwarden"
+                url: "https://vault.jack-lab.dev"
+                icon: "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/vaultwarden.png"
+                allow-insecure: true
+              - title: "Vikunja"
+                url: "https://todo.jack-lab.dev"
+                icon: "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/vikunja.png"
+                allow-insecure: true
+              - title: "Kanso"
+                url: "https://kanso.jack-lab.dev"
+                icon: "https://img.icons8.com/fluency/96/task-completed.png"
+                allow-insecure: true
+                
+          - type: monitor
+            title: "Daily & Study"
+            sites:
+              - title: "Vikunja"
+                url: "https://todo.jack-lab.dev"
+                icon: "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/vikunja.png"
+                allow-insecure: true
+              - title: "GitHub"
+                url: "https://github.com"
+                icon: "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/github.png"
+                allow-insecure: true
+              - title: "Unimia"
+                url: "https://unimia.unimi.it"
+                icon: "https://img.icons8.com/fluency/96/graduation-cap.png"
+                allow-insecure: true
+
+          - type: docker-containers
+            title: "Active Containers"
+            format-container-names: true
+
+      - size: small
+        widgets:
+          - type: server-stats
+            title: "Debian Status"
+          - type: weather
+            location: "Milan, Italy"
+            unit: metric
+            hour-format: 24h
+          - type: rss
+            title: "Anime News"
+            limit: 8
+            feeds:
+              - url: "https://www.animenewsnetwork.com/all/rss.xml"
+                title: "ANN"
+              - url: "https://myanimelist.net/rss/news.xml"
+                title: "MAL"
+  - name: "Morning Briefing"
+    columns:
+      - size: full
+        widgets:
+          - type: rss
+            title: "Italy News (TGCOM24 & ANSA)"
+            limit: 10
+            collapse-after: 5
+            feeds:
+              - url: "https://www.tgcom24.mediaset.it/rss/homepage.xml"
+                title: "TGCOM24"
+              - url: "https://www.ansa.it/sito/ansait_rss.xml"
+                title: "ANSA"
+
+          - type: rss
+            title: "Tech & Innovation"
+            limit: 8
+            collapse-after: 4
+            feeds:
+              - url: "https://www.dday.it/rss"
+                title: "DDay.it"
+              - url: "https://www.tomshw.it/feed"
+                title: "Tom's Hardware"
+
+          - type: reddit
+            title: "Community r/italy"
+            subreddit: italy
+            show-thumbnails: true
+            limit: 5
+
+      - size: small
+        widgets:
+          - type: rss
+            title: "Podcast & Entertainment"
+            limit: 8
+            collapse-after: 4
+            feeds:
+              - url: "https://backr24.ilsole24ore.com/podcast/lazanzara.xml"
+                title: "La Zanzara"
+              - url: "https://feeds.megaphone.fm/il-podcast-di-alessandro-barbero"
+                title: "Alessandro Barbero"
+
+          - type: rss
+            title: "Scince & Space"
+            limit: 5
+            feeds:
+              - url: "https://www.focus.it/rss"
+                title: "Focus"
+              - url: "https://www.ansa.it/scienza/notizie/rubriche/spazio/spazio_rss.xml"
+                title: "ANSA Spazio"

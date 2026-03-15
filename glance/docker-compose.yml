@@ -1,0 +1,29 @@
+services:
+  glance:
+    image: glanceapp/glance:latest
+    container_name: glance
+    extra_hosts:
+      - "photos.jack-lab.dev:${TAILSCALE_IP}"
+      - "proxy.jack-lab.dev:${TAILSCALE_IP}"
+      - "glance.jack-lab.dev:${TAILSCALE_IP}"
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./config/glance.yml:/app/config/glance.yml:ro
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      - TZ=Europe/Rome
+    networks:
+      - proxy-tier
+
+networks:
+  proxy-tier:
+    external: true
