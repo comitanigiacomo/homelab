@@ -28,3 +28,6 @@ immich/postgres/
 
 kanso-project/frontend/
 kanso-project/backend/
+
+nextcloud/db_data/
+nextcloud/nextcloud_data/
