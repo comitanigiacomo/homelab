@@ -31,3 +31,5 @@ kanso-project/backend/
 
 nextcloud/db_data/
 nextcloud/nextcloud_data/
+
+portainer/portainer_data/
