@@ -43,6 +43,11 @@ portfolio/package.json
 portfolio/eslint.config.js
 portfolio/vite.config.js
 portfolio/index.html
+portfolio/.git_backup/
+portfolio/.github/
+portfolio/.gitignore
+portfolio/LICENSE
+portfolio/README.md
 
 vaultwarden/vw-data/
 
