@@ -1,6 +1,6 @@
 # Homelab
 
-Docker Compose configurations for my self-hosted server environment. Everything runs in containers to keep the host system clean.
+Docker Compose configurations for my self-hosted server environment. The infrastructure consists of a single Debian machine, with everything running in containers to keep the host OS clean.
 
 ![dashboard](assets/dashboard.png)
 
