@@ -33,3 +33,13 @@ nextcloud/db_data/
 nextcloud/nextcloud_data/
 
 portainer/portainer_data/
+
+portfolio/src/
+portfolio/public/
+portfolio/node_modules/
+portfolio/scripts/
+portfolio/package-lock.json
+portfolio/package.json
+portfolio/eslint.config.js
+portfolio/vite.config.js
+portfolio/index.html
