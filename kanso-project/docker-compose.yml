@@ -1,0 +1,62 @@
+
+services:
+  kanso-db:
+    image: postgres:15-alpine
+    container_name: kanso_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./backend/db/init_schema.sql:/docker-entrypoint-initdb.d/init.sql:Z
+    networks:
+      - kanso_network
+
+  kanso-redis:
+    image: redis:7-alpine
+    container_name: kanso_redis
+    restart: unless-stopped
+    networks:
+      - kanso_network
+
+  kanso-api:
+    build: ./backend
+    container_name: kanso_backend
+    restart: unless-stopped
+    depends_on:
+      - kanso-db
+      - kanso-redis
+    environment:
+      - DB_HOST=kanso-db
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+      - REDIS_HOST=${K_REDIS_HOST}
+      - PORT=${K_PORT}
+    ports:
+      - "8091:${K_PORT}"
+    networks:
+      - kanso_network
+
+  kanso-web:
+    build:
+      context: ./frontend
+      args:
+        - VITE_API_URL=${K_VITE_API_URL}
+    container_name: kanso_frontend
+    restart: unless-stopped
+    depends_on:
+      - kanso-api
+    ports:
+      - "3000:80"
+    networks:
+      - kanso_network
+
+networks:
+  kanso_network:
+    name: kanso_net
+
+volumes:
+  postgres_data:

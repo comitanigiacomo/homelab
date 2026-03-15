@@ -22,3 +22,9 @@ adguard/conf/
 
 .DS_Store
 Thumbs.db
+
+immich/library/
+immich/postgres/
+
+kanso-project/frontend/
+kanso-project/backend/
