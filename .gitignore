@@ -45,3 +45,6 @@ portfolio/vite.config.js
 portfolio/index.html
 
 vaultwarden/vw-data/
+
+vikunja/db/
+vikunja/files/

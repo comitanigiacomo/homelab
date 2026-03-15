@@ -1,0 +1,35 @@
+services:
+  db:
+    image: mariadb:10
+    container_name: vikunja-db
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_USER: vikunja
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: vikunja
+    volumes:
+      - ./db:/var/lib/mysql
+    restart: unless-stopped
+
+  vikunja:
+    image: vikunja/vikunja:latest
+    container_name: vikunja
+    environment:
+      VIKUNJA_DATABASE_HOST: db
+      VIKUNJA_DATABASE_PASSWORD: ${DB_PASSWORD}
+      VIKUNJA_DATABASE_TYPE: mysql
+      VIKUNJA_DATABASE_USER: vikunja
+      VIKUNJA_DATABASE_NAME: vikunja
+      VIKUNJA_SERVICE_JWTSECRET: ${VIKUNJA_SERVICE_JWTSECRET}
+      VIKUNJA_SERVICE_PUBLICURL: ${VIKUNJA_SERVICE_PUBLICURL}
+    volumes:
+      - ./files:/app/vikunja/files
+    depends_on:
+      - db
+    restart: unless-stopped
+
+networks:
+  default:
+    name: proxy-tier
+    external: true
