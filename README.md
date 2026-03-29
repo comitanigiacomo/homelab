@@ -1,6 +1,6 @@
 # Homelab
 
-Docker Compose configurations for my self-hosted server environment. Everything runs in containers to keep the host system clean.
+Docker Compose configurations for my self-hosted server environment. The infrastructure consists of a single Debian machine, with everything running in containers to keep the host OS clean.
 
 ![dashboard](assets/dashboard.png)
 
@@ -11,6 +11,7 @@ Docker Compose configurations for my self-hosted server environment. Everything 
 * **Kanso Project**: Self-hosted habit tracker. -> [kanso](https://kanso.jack-lab.dev/)
 * **Nextcloud**: Cloud storage for files and server backups.
 * **Nginx Proxy Manager**: Reverse proxy management.
+* **Pi-hole**: Network-wide ad blocking.
 * **Portainer**: Docker container monitoring.
 * **Portfolio**: Hosting for my personal website. -> [deep_mind](https://portfolio.jack-lab.dev/)
 * **Vaultwarden**: Password manager backend, synced across all devices via Bitwarden.
