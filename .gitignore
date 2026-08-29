@@ -55,3 +55,7 @@ vikunja/db/
 vikunja/files/
 
 minecraft/
+
+opengym/*
+!opengym/docker-compose.yml
+!opengym/.env.example
