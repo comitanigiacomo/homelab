@@ -60,6 +60,10 @@ pages:
                 url: "https://kanso.jack-lab.dev"
                 icon: "https://img.icons8.com/fluency/96/task-completed.png"
                 allow-insecure: true
+              - title: "OpenGym"
+                url: "https://gym.jack-lab.dev"
+                icon: "https://img.icons8.com/fluency/96/dumbbell.png"
+                allow-insecure: true
                 
           - type: monitor
             title: "Daily & Study"
